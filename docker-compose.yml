@@ -1,0 +1,25 @@
+version: "3"
+services:
+  agent:
+    build:
+      dockerfile: ./Dockerfile-agent
+    volumes:
+      - ./snmp-agent.conf:/etc/snmpd/snmpd.conf
+    deploy:
+      replicas: 5
+
+  scanner:
+    depends_on:
+      - agent
+    build:
+      dockerfile: ./Dockerfile
+
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.0.0/16
+          gateway: 172.16.0.1

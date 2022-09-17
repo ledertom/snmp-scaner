@@ -1,0 +1,3 @@
+FROM arm64v8/alpine
+RUN apk add net-snmp net-snmp-libs
+CMD [ "/usr/sbin/snmpd", "-Dmib_init", "-f", "-Lo", "-c", "/etc/snmpd/snmpd.conf" ]

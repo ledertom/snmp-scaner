@@ -1,0 +1,32 @@
+{
+  "name": "ui",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node build/index.js",
+    "build": "npx tsc",
+    "test": "ts-mocha test/*"
+  },
+  "author": "Tomas Lederer",
+  "dependencies": {
+    "@reactivex/rxjs": "^6.6.7",
+    "bluebird": "^3.7.2",
+    "chai": "^4.3.6",
+    "ip": "^1.1.8",
+    "mocha": "^10.0.0",
+    "rxjs": "^7.5.6",
+    "snmp-native": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.36",
+    "@types/chai": "^4.3.3",
+    "@types/expect": "^24.3.0",
+    "@types/ip": "^1.1.0",
+    "@types/mocha": "^9.1.1",
+    "@types/snmp-native": "^1.2.2",
+    "i": "^0.3.7",
+    "npm": "^8.19.2",
+    "ts-mocha": "^10.0.0",
+    "typescript": "^4.8.3"
+  }
+}
