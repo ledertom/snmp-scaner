@@ -18,7 +18,7 @@ export default {
         for(let i = firstLong; i <= lastLong; i++) {
             try {
                 console.debug("trying " + ip.fromLong(i))
-                const response = await asyncGet({oid: hostname_oid, host: ip.fromLong(i), community: 'public', timeouts: [100, 50, 50, 50]})
+                const response = await asyncGet({oid: hostname_oid, host: ip.fromLong(i), community: 'public', timeouts: [50, 30, 10, 5]})
                 hosts.push(new Host(ip.fromLong(i), response[0].value))
             } catch (e) {
             }
