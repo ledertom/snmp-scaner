@@ -23,17 +23,6 @@ export default {
         session.close()
         return hosts
     },
-
-    async getInterfaceInfo(host : Host): Promise<Host> {
-        const session = new snmp.Session()
-
-        try {
-
-
-        } catch (e) {
-        }
-        return host
-    }
 }
 
 async function tryIp(session : snmp.Session, ipLong : number) : Promise<Host | null> {
