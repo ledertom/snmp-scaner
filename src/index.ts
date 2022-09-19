@@ -11,7 +11,12 @@ try {
     process.exit(1)
 }
 
-const hosts = await host_scanner.scanHosts(network)
-hosts.forEach(host => host.print())
-
-process.exit(0)
+console.log("Scanning network " + cidr)
+const scanner = host_scanner.createScanner(network)
+scanner.subscribe(
+    host => host.print(),
+    () => {},
+    () => {
+        console.log("Scan finished.")
+    }
+)
