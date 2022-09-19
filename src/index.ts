@@ -16,7 +16,6 @@ const hosts = await host_scanner.scanHosts(network)
 for(let host of hosts)
     await host_scanner.getInterfaceInfo(host)
 
-console.log(JSON.stringify(hosts))
 hosts.forEach(host => host.print())
 
 process.exit(0)
