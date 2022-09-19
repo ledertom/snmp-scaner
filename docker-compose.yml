@@ -12,8 +12,7 @@ services:
     depends_on:
       - agent
     command: 172.16.0.0/24
-    build:
-      dockerfile: ./Dockerfile
+    build: .
 
 networks:
   default:
