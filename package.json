@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "node build/index.js",
+    "start": "node build/index.js 10.6.6.0/24",
     "build": "npx tsc",
     "test": "ts-mocha test/*"
   },
@@ -20,7 +20,6 @@
   "devDependencies": {
     "@types/bluebird": "^3.5.36",
     "@types/chai": "^4.3.3",
-    "@types/expect": "^24.3.0",
     "@types/ip": "^1.1.0",
     "@types/mocha": "^9.1.1",
     "@types/snmp-native": "^1.2.2",

@@ -5,4 +5,4 @@ COPY package.json ./
 COPY tsconfig.json ./
 RUN npm install
 RUN npx tsc
-ENTRYPOINT npm run start
+ENTRYPOINT ["node", "build/index.js"]

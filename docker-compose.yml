@@ -1,19 +1,19 @@
 version: "3"
 services:
   agent:
-    build:
-      dockerfile: ./Dockerfile-agent
+    image: polinux/snmpd:alpine
+    command: -c /etc/snmpd/snmpd.conf
     volumes:
       - ./snmp-agent.conf:/etc/snmpd/snmpd.conf
     deploy:
-      replicas: 5
+      replicas: 80
 
   scanner:
     depends_on:
       - agent
+    command: 172.16.0.0/24
     build:
       dockerfile: ./Dockerfile
-
 
 networks:
   default:
@@ -21,5 +21,4 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: 172.16.0.0/16
-          gateway: 172.16.0.1
+          - subnet: "172.16.0.0/24"
