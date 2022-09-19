@@ -8,4 +8,9 @@ export default class {
         this.hostname = hostname;
         this.interfaces = []
     }
+
+    print() {
+        const nics = this.interfaces.join(", ")
+        console.log([this.ip, this.hostname, nics].join("; "))
+    }
 }

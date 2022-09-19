@@ -9,6 +9,7 @@ const hosts = await host_scanner.scanHosts(cidr)
 for(let host of hosts)
     await interface_info_loader.getInterfaceInfo(host)
 
-console.log(JSON.stringify(hosts, null, 2))
+console.log(JSON.stringify(hosts))
+hosts.forEach(host => host.print())
 
 process.exit(0)
