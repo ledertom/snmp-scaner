@@ -2,7 +2,7 @@
   "name": "ui",
   "version": "1.0.0",
   "scripts": {
-    "start": "node build/index.js 10.6.6.0/24",
+    "start": "node build/index.js 10.6.0.0/16",
     "build": "npx tsc",
     "test": "ts-mocha test/*"
   },

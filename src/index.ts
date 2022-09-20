@@ -14,10 +14,10 @@ try {
 
 console.log("Scanning network " + cidr)
 const scanner = host_scanner.createScanner(network)
-scanner.subscribe(
-    (host: Host) => host.print(),
-    () => {},
-    () => {
-        console.log("Scan finished.")
-    }
+
+scanner.subscribe({
+    next: (host: Host) => host.print(),
+    error: error => console.error("Scan failed. Error: " + error),
+    complete: () => console.log("Scan finished.")
+}
 )
