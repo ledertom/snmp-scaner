@@ -9,8 +9,8 @@ services:
       replicas: 80
 
   scanner:
-    depends_on:
-      - agent
+    #depends_on:
+    #  - agent
     command: 172.16.0.0/24
     build: .
 
