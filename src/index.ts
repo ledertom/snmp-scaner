@@ -1,4 +1,5 @@
-import host_scanner from "./host_scanner.js"
+import Host from "./Host";
+import host_scanner from "./host_scanner"
 import ip from "ip";
 
 const cidr = process.argv[2]
@@ -14,7 +15,7 @@ try {
 console.log("Scanning network " + cidr)
 const scanner = host_scanner.createScanner(network)
 scanner.subscribe(
-    host => host.print(),
+    (host: Host) => host.print(),
     () => {},
     () => {
         console.log("Scan finished.")

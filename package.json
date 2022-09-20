@@ -1,7 +1,6 @@
 {
   "name": "ui",
   "version": "1.0.0",
-  "type": "module",
   "scripts": {
     "start": "node build/index.js 10.6.6.0/24",
     "build": "npx tsc",
